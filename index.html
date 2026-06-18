@@ -6,15 +6,185 @@
 <title>VEXARA — Wear Your Edge</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+   <style>
+:root{
+  /* 🎨 PRIMARY COLORS */
+  --bg-main: #0b0b12;
+  --bg-secondary: #12121c;
+  --bg-card: rgba(255,255,255,0.05);
+
+  /* 🌈 ACCENT SYSTEM */
+  --accent: #7c3aed;          /* purple */
+  --accent2: #22d3ee;         /* neon blue */
+  --accent-glow: rgba(124,58,237,0.5);
+
+  /* 🧾 TEXT */
+  --text-main: #ffffff;
+  --text-secondary: #b3b3cc;
+  --text-muted: #77778f;
+
+  /* 🧊 GLASS / BORDERS */
+  --glass: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.12);
+
+  /* 🎯 SYSTEM */
+  --success: #22c55e;
+  --danger: #ef4444;
+
+  /* ✨ EFFECTS */
+  --radius: 12px;
+  --blur: blur(12px);
+
+  /* 🔤 FONTS */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* 🌌 GLOBAL BACKGROUND */
+body{
+  background: radial-gradient(circle at top, #1a1a2e, #0b0b12);
+  color: var(--text-main);
+  font-family: var(--font-body);
+}
+
+/* 🧊 GLASS CARDS */
+.checkout-card,
+.product-card,
+.cart-item,
+.success-card,
+.contact-form,
+.value-card{
+  background: var(--bg-card);
+  backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+}
+
+/* 🔘 BUTTONS */
+.btn,
+.place-order-btn,
+.add-to-cart-btn,
+.contact-submit{
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: 0.3s ease;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.btn:hover,
+.place-order-btn:hover,
+.add-to-cart-btn:hover{
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 30px var(--accent2);
+}
+
+/* 🧾 INPUT FIELDS */
+.form-input,
+select,
+textarea{
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  border-radius: 8px;
+}
+
+.form-input:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* 🧠 TEXT */
+.form-label{
+  color: var(--text-secondary);
+}
+
+.checkout-card-title,
+.section-title,
+.static-title{
+  color: var(--text-main);
+}
+
+/* 🛒 TOTAL HIGHLIGHT */
+.checkout-total-row.grand span:last-child{
+  color: var(--accent2);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 🎯 BADGES */
+.product-badge{
+  background: var(--accent);
+  color: white;
+}
+
+.product-badge.sale{
+  background: var(--danger);
+}
+
+/* 💎 LINKS */
+a{
+  color: var(--accent2);
+}
+
+a:hover{
+  opacity: 0.8;
+}
+
+/* 🧊 NAVBAR */
+#navbar{
+  background: rgba(10,10,20,0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+/* 🧾 FOOTER */
+#main-footer{
+  background: #0b0b12;
+  border-top: 1px solid var(--glass-border);
+}
+
+/* 🧠 TOAST */
+#toast{
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
+}
+
+/* 💫 HOVER CARDS */
+.product-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(124,58,237,0.2);
+}
+
+/* 🎯 ACTIVE STATES */
+.payment-method.active{
+  border: 1px solid var(--accent);
+  background: rgba(124,58,237,0.1);
+}
+
+/* 🧊 CART SIDEBAR */
+#cart-sidebar{
+  background: var(--bg-secondary);
+}
+
+/* ✨ SUCCESS ICON */
+.success-icon{
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+/* 🎯 COUPON BUTTON */
+.coupon-apply{
+  background: var(--accent2);
+  color: black;
+}
+</style>
 /* ============================================================
    VEXARA — CSS DESIGN SYSTEM
    ============================================================ */
-:root{
-  --black:#0A0A0A;
-  --black2:#111111;
-  --black3:#1a1a1a;
-  --black4:#222222;
-  --white:#F0EDE8;
+F0EDE8;
   --acid:#C8FF00;
   --gold:#B8963E;
   --red:#FF3B3B;
